@@ -1,8 +1,15 @@
 import React from 'react';
+import Header from './components/header';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/index.css';
 
 function App() {
   return (
-    <h1>Hello Word</h1>
+    <>
+      <Header />
+      <h1>Hello World</h1>
+    </>
+
   );
 }
 
