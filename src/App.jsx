@@ -1,20 +1,16 @@
 import React, { useContext } from 'react';
 import Context from './context/context';
 import Header from './components/header';
+import Table from './components/tables';
 import months from './utils/months';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/index.css';
 
 function App() {
   const {
-    patients,
-    // setPatients,
     expectedTotal,
-    // setExpectedTotal,
     receivedTotal,
   } = useContext(Context);
-
-  console.log(patients, expectedTotal, receivedTotal);
 
   return (
     <>
@@ -60,7 +56,7 @@ function App() {
           </span>
         </div>
       </section>
-      <h1>Hello World</h1>
+      <Table />
     </>
 
   );
