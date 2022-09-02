@@ -2,7 +2,35 @@
 
 html body {
   margin: 0;
-  padding: 0;
   height: 100vh;
+  padding: 0;
   width: 100vw;
+}
+
+.main-section {
+  border-bottom: 5px solid #067d9d;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.period-div {
+  display: flex;
+  height: 100%;
+  width: 500px;
+}
+
+.form-label {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  width: 200px;
+}
+
+.value-div {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
 }
