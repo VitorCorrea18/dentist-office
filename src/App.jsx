@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Context from './context/context';
 import Header from './components/header';
 import months from './utils/months';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/index.css';
 
 function App() {
+  const {
+    patients,
+    // setPatients,
+    expectedTotal,
+    // setExpectedTotal,
+    receivedTotal,
+  } = useContext(Context);
+
+  console.log(patients, expectedTotal, receivedTotal);
+
   return (
     <>
       <Header />
@@ -17,7 +28,7 @@ function App() {
             Mês
             <select className="form-select" id="month-select">
               {
-                months.map((m) => (<option>{m}</option>))
+                months.map((m) => (<option key={m}>{m}</option>))
               }
             </select>
           </label>
@@ -37,7 +48,7 @@ function App() {
             Total recebido:
           </span>
           <span className="span-total">
-            R$ xxx,xx
+            {`R$ ${receivedTotal}`}
           </span>
         </div>
         <div className="value-div">
@@ -45,7 +56,7 @@ function App() {
             Total esperado:
           </span>
           <span className="span-total">
-            R$ xxx,xx
+            {`R$ ${expectedTotal}`}
           </span>
         </div>
       </section>
