@@ -3,6 +3,7 @@ import Context from './context/context';
 import Header from './components/header';
 import Table from './components/tables';
 import months from './utils/months';
+import years from './utils/years';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/index.css';
 
@@ -10,7 +11,13 @@ function App() {
   const {
     expectedTotal,
     receivedTotal,
+    monthSelect,
+    setMonthSelect,
+    yearSelect,
+    setYearSelect,
   } = useContext(Context);
+
+  console.log(yearSelect);
 
   return (
     <>
@@ -22,9 +29,14 @@ function App() {
             htmlFor="month-select"
           >
             Mês
-            <select className="form-select" id="month-select">
+            <select
+              className="form-select"
+              id="month-select"
+              value={monthSelect}
+              onChange={({ target: { value } }) => setMonthSelect(value)}
+            >
               {
-                months.map((m) => (<option key={m}>{m}</option>))
+                months.map((m, i) => (<option key={m} value={i + 1}>{m}</option>))
               }
             </select>
           </label>
@@ -33,9 +45,17 @@ function App() {
             htmlFor="year-select"
           >
             Ano
-            <select className="form-select" id="year-select">
-              <option>2022</option>
-              <option>2021</option>
+            <select
+              className="form-select"
+              id="year-select"
+              value={yearSelect}
+              onChange={({ target: { value } }) => setYearSelect(value)}
+            >
+              {
+                years.map((year) => (
+                  <option key={year} value={year}>{year}</option>
+                ))
+              }
             </select>
           </label>
         </div>
