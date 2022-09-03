@@ -1,0 +1,23 @@
+.patient-table {
+  border-collapse: separate;
+  width: 100%; 
+}
+
+td {
+  text-align: center;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.table-head th {
+  height: 35px;
+  background-color: #9de7fb;
+  color: #045D76;
+  text-align: center;
+  font-size: 20px;
+}
+
+.table-body tr:nth-child(even){ background-color: #E6F9FB }
+
+.table-body tr:hover { background-color: #ddd; }

@@ -23,9 +23,9 @@ export default function Table() {
   });
 
   return (
-    <table>
+    <table className="patient-table">
 
-      <thead className="table_head">
+      <thead className="table-head">
         <tr>
           <th>Paciente</th>
           <th>Tratamento</th>
@@ -36,7 +36,7 @@ export default function Table() {
           <th>Marcar como Pago</th>
         </tr>
       </thead>
-      <tbody className="table_body">
+      <tbody className="table-body">
         {
           data.map(({
             id, name, treatment, total, installment, paymentIndex,
@@ -46,15 +46,15 @@ export default function Table() {
             return (
               <tr key={id}>
                 <td data-testid={`table-name-${index}`}>
-                  { name }
+                  {name}
                 </td>
 
                 <td data-testid={`table-treatment-${index}`}>
-                  { treatment }
+                  {treatment}
                 </td>
 
                 <td data-testid={`table-installments-${index}`}>
-                  { `${paymentIndex} ${installment.date}` }
+                  {`${paymentIndex} ${installment.date}`}
                 </td>
 
                 <td data-testid={`table-installment-value-${index}`}>
@@ -62,15 +62,15 @@ export default function Table() {
                 </td>
 
                 <td data-testid={`table-total-${index}`}>
-                  { total }
+                  {total}
                 </td>
 
                 <td data-testid={`table-status-${index}`}>
-                  { installment.status }
+                  {installment.status}
                 </td>
 
                 <td data-testid={`table-btns-${index}`}>
-                  { /* implementar os botões que marcam o pagamento */ }
+                  { /* implementar os botões que marcam o pagamento */}
                   botões
                 </td>
               </tr>

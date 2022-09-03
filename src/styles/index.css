@@ -1,4 +1,5 @@
 @import "../components/header/header.css";
+@import "../components/tables/table.css";
 
 html body {
   margin: 0;
