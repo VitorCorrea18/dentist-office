@@ -340,7 +340,7 @@ export default [
     id: 10,
     name: 'Siqueira Junior',
     treatment: 'Branqueamento dentário',
-    total: '830.00',
+    total: '130.00',
     startDate: '20-10-2021',
     installments: [
       {
