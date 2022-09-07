@@ -3,12 +3,13 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import Context from './context';
-import patientsMock from '../__tests__/mocks/patientsMock';
-import calcExpectedTotal from '../helpers';
+import fetchPatientsApi from '../api';
+// import patientsMock from '../__tests__/mocks/patientsMock';
+import { calcExpectedTotal, recoverActualMonth, filterPatient } from '../helpers';
 
 function Provider({ children }) {
-  const [monthSelect, setMonthSelect] = useState(1);
-  const [yearSelect, setYearSelect] = useState();
+  const [monthSelect, setMonthSelect] = useState('1');
+  const [yearSelect, setYearSelect] = useState('2022');
   const [patients, setPatients] = useState([]);
   const [expectedTotal, setExpectedTotal] = useState('0,00');
   const [receivedTotal, setReceivedTotal] = useState('0,00');
@@ -25,16 +26,22 @@ function Provider({ children }) {
   );
 
   const getPatients = useCallback(
-    () => {
-      setPatients(patientsMock);
+    async () => {
+      console.log(monthSelect, yearSelect);
+      const response = await fetchPatientsApi();
+      const filteredPatients = filterPatient(monthSelect, yearSelect, response);
+      const data = recoverActualMonth(filteredPatients, monthSelect, yearSelect);
+      setPatients(data);
     },
     [],
   );
 
   const calcTotal = useCallback(
     () => {
-      const total = calcExpectedTotal(patients);
-      setExpectedTotal(total);
+      if (patients.length > 0) {
+        const total = calcExpectedTotal(patients);
+        setExpectedTotal(total);
+      }
     },
     [patients],
   );
@@ -65,7 +72,7 @@ function Provider({ children }) {
 
   return (
     <Context.Provider value={defaultContext}>
-      { children }
+      {children}
     </Context.Provider>
   );
 }

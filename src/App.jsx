@@ -17,8 +17,6 @@ function App() {
     setYearSelect,
   } = useContext(Context);
 
-  console.log(yearSelect);
-
   return (
     <>
       <Header />
