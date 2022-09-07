@@ -48,3 +48,11 @@ export const formatDate = (date) => {
   const formated = `${splitedDate[2]}/${splitedDate[1]}/${splitedDate[0]}`;
   return formated;
 };
+
+export const calcReceived = (patients) => {
+  let received = 0;
+  patients.forEach(({ installment, installmentsValue }) => {
+    if (installment.status === 'Pago') received += Number(installmentsValue);
+  });
+  return received.toFixed(2);
+};

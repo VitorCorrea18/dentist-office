@@ -4,8 +4,9 @@ import React, {
 import PropTypes from 'prop-types';
 import Context from './context';
 import fetchPatientsApi from '../api';
-// import patientsMock from '../__tests__/mocks/patientsMock';
-import { calcExpectedTotal, recoverActualMonth, filterPatient } from '../helpers';
+import {
+  calcExpectedTotal, calcReceived, recoverActualMonth, filterPatient,
+} from '../helpers';
 
 function Provider({ children }) {
   const [monthSelect, setMonthSelect] = useState('01');
@@ -39,6 +40,8 @@ function Provider({ children }) {
     () => {
       if (patients.length > 0) {
         const total = calcExpectedTotal(patients);
+        const received = calcReceived(patients);
+        setReceivedTotal(received);
         setExpectedTotal(total);
       }
     },
