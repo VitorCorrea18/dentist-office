@@ -1,3 +1,5 @@
+import { fetchPatientsApi } from '../api';
+
 export const calcExpectedTotal = (patients) => {
   if (patients.length > 0) {
     let total = 0;
@@ -55,4 +57,11 @@ export const calcReceived = (patients) => {
     if (installment.status === 'Pago') received += Number(installmentsValue);
   });
   return received.toFixed(2);
+};
+
+export const fetchPatients = async (monthSelect, yearSelect) => {
+  const response = await fetchPatientsApi();
+  const filteredPatients = filterPatient(monthSelect, yearSelect, response);
+  const data = recoverActualMonth(filteredPatients, monthSelect, yearSelect);
+  return data;
 };

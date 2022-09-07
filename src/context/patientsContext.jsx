@@ -3,9 +3,8 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import Context from './context';
-import fetchPatientsApi from '../api';
 import {
-  calcExpectedTotal, calcReceived, recoverActualMonth, filterPatient,
+  calcExpectedTotal, calcReceived, fetchPatients,
 } from '../helpers';
 
 function Provider({ children }) {
@@ -28,9 +27,7 @@ function Provider({ children }) {
 
   const getPatients = useCallback(
     async () => {
-      const response = await fetchPatientsApi();
-      const filteredPatients = filterPatient(monthSelect, yearSelect, response);
-      const data = recoverActualMonth(filteredPatients, monthSelect, yearSelect);
+      const data = await fetchPatients(monthSelect, yearSelect);
       setPatients(data);
     },
     [monthSelect, yearSelect],

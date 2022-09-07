@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { formatDate } from '../../helpers';
+import MarkReceivedBtn from '../buttons/MarkReceivedBtn';
 
 export default function TableBody({ data }) {
   return (
@@ -35,8 +36,9 @@ export default function TableBody({ data }) {
             </td>
 
             <td data-testid={`table-btns-${index}`}>
-              { /* implementar os botões que marcam o pagamento */}
-              botões
+              <MarkReceivedBtn
+                installmentId={installment.id}
+              />
             </td>
           </tr>
         ))
