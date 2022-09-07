@@ -34,7 +34,7 @@ function App() {
               onChange={({ target: { value } }) => setMonthSelect(value)}
             >
               {
-                months.map((m, i) => (<option key={m} value={i + 1}>{m}</option>))
+                months.map((m, i) => (<option key={m} value={`0${i + 1}`}>{m}</option>))
               }
             </select>
           </label>

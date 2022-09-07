@@ -8,7 +8,7 @@ import fetchPatientsApi from '../api';
 import { calcExpectedTotal, recoverActualMonth, filterPatient } from '../helpers';
 
 function Provider({ children }) {
-  const [monthSelect, setMonthSelect] = useState('1');
+  const [monthSelect, setMonthSelect] = useState('01');
   const [yearSelect, setYearSelect] = useState('2022');
   const [patients, setPatients] = useState([]);
   const [expectedTotal, setExpectedTotal] = useState('0,00');
@@ -17,9 +17,9 @@ function Provider({ children }) {
   const getDate = useCallback(
     () => {
       const d = new Date();
-      const month = d.getMonth(); // returns the month from 0 to 11
+      const month = `0${d.getMonth() + 1}`; // returns the month from 0 to 11
       const year = d.getFullYear();
-      setMonthSelect(month + 1); // add 1 to get the actual month number
+      setMonthSelect(month); // add 1 to get the actual month number
       setYearSelect(year.toString());
     },
     [],
@@ -27,13 +27,12 @@ function Provider({ children }) {
 
   const getPatients = useCallback(
     async () => {
-      console.log(monthSelect, yearSelect);
       const response = await fetchPatientsApi();
       const filteredPatients = filterPatient(monthSelect, yearSelect, response);
       const data = recoverActualMonth(filteredPatients, monthSelect, yearSelect);
       setPatients(data);
     },
-    [],
+    [monthSelect, yearSelect],
   );
 
   const calcTotal = useCallback(
@@ -48,8 +47,11 @@ function Provider({ children }) {
 
   useEffect(() => {
     getDate();
-    getPatients();
   }, []);
+
+  useEffect(() => {
+    getPatients();
+  }, [getPatients]);
 
   useEffect(() => {
     calcTotal();
