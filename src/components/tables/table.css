@@ -21,3 +21,27 @@ td {
 .table-body tr:nth-child(even){ background-color: #E6F9FB }
 
 .table-body tr:hover { background-color: #ddd; }
+
+@media screen and (max-width: 500px) {
+  .patient-table {
+    opacity: 10;
+    height: 1px;
+  }
+
+  td {
+    text-align: center;
+    height: 20px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .table-head th {
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .table-body tr:nth-child(even){ background-color: #E6F9FB }
+
+  .table-body tr:hover { background-color: #ddd; }
+
+}

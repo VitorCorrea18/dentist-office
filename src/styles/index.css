@@ -35,3 +35,29 @@ html body {
   flex-direction: column;
   font-size: 30px;
 }
+
+@media screen and (max-width: 500px) {
+  .main-section {
+    height: 100px;
+  }
+
+  .period-div {
+    flex-direction: column;
+    width: 200px;
+  }
+
+  .form-label {
+  flex-direction: row;
+  margin: 0 0 3px 5px;
+  width: 155px;
+}
+
+  .value-div {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    width: 100px;
+  }
+
+}

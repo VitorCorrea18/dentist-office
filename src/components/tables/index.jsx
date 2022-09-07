@@ -16,7 +16,7 @@ export default function Table() {
           <th>Paciente</th>
           <th>Tratamento</th>
           <th>Parcelas</th>
-          <th>Valor da parcela</th>
+          <th>Valor</th>
           <th>Total</th>
           <th>Status</th>
           <th>Marcar como Pago</th>
