@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: `http://localhost:${process.env.REACT_APP_API_PORT || '3001'}`,
+  baseURL: `https://softeo-api.herokuapp.com/:${process.env.REACT_APP_API_PORT || '3001'}`,
 });
 
 export const fetchPatientsApi = async () => {
