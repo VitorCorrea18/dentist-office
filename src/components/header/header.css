@@ -40,3 +40,29 @@
   height: 50px;
   width: 200px;
 }
+
+@media screen and (max-width: 500px) {
+  .page-header {
+    height: 90px;
+  }
+
+  .div-logo {
+    height: 50px;
+    margin: 0 5px;
+    width: 50px;
+  }
+
+  .img-logo {
+    width: 40px;
+  }
+
+  .page-title {
+    font-size: 30px;
+  }
+
+  .new-btn {
+    font-size: 10px !important;
+    height: 30px;
+    width: 100px;
+  }
+}
