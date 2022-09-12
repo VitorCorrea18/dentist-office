@@ -62,7 +62,6 @@ export const calcReceived = (patients) => {
 export const fetchPatients = async (monthSelect, yearSelect) => {
   let month = monthSelect;
   if (monthSelect.toString().length === 1) month = `0${monthSelect}`;
-  console.log(month);
   const response = await fetchPatientsApi();
   const filteredPatients = filterPatient(month, yearSelect, response);
   const data = recoverActualMonth(filteredPatients, month, yearSelect);
