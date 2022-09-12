@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Dentist Office
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was developed as a technical challenge, the only goal here is to show my knowledge and of course to have some fun while doing it. < Érica is a ficticional dentist! > <br>
+This front end application is designed to organize a dentist office's finance. Since the treatments are expensive and take time to complete the patients can pay monthly at each session. The user can see the patients scheduled at the selected month and year and also see monthly income at the selected date. 
 
-## Available Scripts
+## API used
+I Also developed the API
+> https://github.com/VitorCorrea18/softeo-backend
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+Clone this repository
+```bash
+git clone git@github.com:VitorCorrea18/softeo-frontend.git
+```
+In the project's folder install the dependencies
+```bash
+npm install
+```
+Start the project
+```bash
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<b>Now it should be running on your default browser</b>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+* It will always open with the current month and year selected, but you can change the date as you wish to check past and future dates as well <br>
+The Table you show info about the patients as
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> - Name
+> - Treatment
+> - How many paiments left and the date it is scheduled
+> - Total value of treatment
+> - Payment status, with button to mark as already paid.
 
-### `npm run build`
+* The header button "Novo Paciente" will open a window to enter a new patient (<b>still in development</b>)
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Obervations
+  The project is not yet 100% but i will finish it as soon as i can <br>
+  <b>Feedbacks are welcome :rocket:</b>
