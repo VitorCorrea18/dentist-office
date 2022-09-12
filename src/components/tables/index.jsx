@@ -19,7 +19,6 @@ export default function Table() {
           <th>Valor</th>
           <th>Total</th>
           <th>Status</th>
-          <th>Marcar como Pago</th>
         </tr>
       </thead>
       {
