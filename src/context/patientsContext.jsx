@@ -8,7 +8,7 @@ import {
 } from '../helpers';
 
 function Provider({ children }) {
-  const [monthSelect, setMonthSelect] = useState('01');
+  const [monthSelect, setMonthSelect] = useState('');
   const [yearSelect, setYearSelect] = useState('2022');
   const [patients, setPatients] = useState([]);
   const [expectedTotal, setExpectedTotal] = useState('0,00');
