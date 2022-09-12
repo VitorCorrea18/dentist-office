@@ -32,14 +32,12 @@ export default function TableBody({ data }) {
             </td>
 
             <td data-testid={`table-status-${index}`}>
-              {installment.status}
-            </td>
-
-            <td data-testid={`table-btns-${index}`}>
               <MarkReceivedBtn
                 installmentId={installment.id}
+                installmentStatus={installment.status}
               />
             </td>
+
           </tr>
         ))
       }

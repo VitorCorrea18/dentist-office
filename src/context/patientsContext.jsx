@@ -8,7 +8,7 @@ import {
 } from '../helpers';
 
 function Provider({ children }) {
-  const [monthSelect, setMonthSelect] = useState('01');
+  const [monthSelect, setMonthSelect] = useState('');
   const [yearSelect, setYearSelect] = useState('2022');
   const [patients, setPatients] = useState([]);
   const [expectedTotal, setExpectedTotal] = useState('0,00');
@@ -17,7 +17,7 @@ function Provider({ children }) {
   const getDate = useCallback(
     () => {
       const d = new Date();
-      const month = `0${d.getMonth() + 1}`; // returns the month from 0 to 11
+      const month = d.getMonth() + 1; // returns the month from 0 to 11
       const year = d.getFullYear();
       setMonthSelect(month); // add 1 to get the actual month number
       setYearSelect(year.toString());
