@@ -3,9 +3,6 @@
 This project was developed as a technical challenge, the only goal here is to show my knowledge and of course to have some fun while doing it. < Érica is a ficticional dentist! > <br>
 This front end application is designed to organize a dentist office's finance. Since the treatments are expensive and take time to complete the patients can pay monthly at each session. The user can see the patients scheduled at the selected month and year and also see monthly income at the selected date.
 
-See the App runing on Heroku https://softeo-ft.herokuapp.com/ <br>
-> Heroku sometimes put the APP at 'sleepy' mode to save resources since this URL is not comercial and doesn't get much access. So if the page doesn't load properly at first you can try reload the page to fix it.
-
 ## API used
 I Also developed the API
 > https://github.com/VitorCorrea18/softeo-backend
